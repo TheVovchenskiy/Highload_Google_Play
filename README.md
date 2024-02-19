@@ -52,7 +52,7 @@
 ### Статистика контента
 - количество скачиваний приложений: 63 млрд в год [^2]
 - количество скачиваний игр: 50 млрд в год [^2]
-- количество приложений в магазине: 2.6 млрд [^2]
+- количество приложений в магазине: 3.7 млн [^5]
 - 97% приложений - бесплатные [^3]
 
 #### Количество новых приложений в месяц [^2] 
@@ -77,3 +77,4 @@
 [^2]: [Google Play Store Revenue, Ratings & Subscription Stats 2024](https://prioridata.com/data/google-play-revenue-statistics/)
 [^3]: [Key Google Play Store Statistics in 2024](https://www.pagetraffic.in/blog/google-play-store-statistics/)
 [^4]: [Google Play Store Statistics and Trends in 2022- 2023](https://www.emizentech.com/blog/google-play-store-statistics.html)
+[^5]: [How Many Apps In Google Play Store? (Feb 2024) (Source: https://www.bankmycell.com/blog/number-of-google-play-store-apps/)](https://www.bankmycell.com/blog/number-of-google-play-store-apps/)
