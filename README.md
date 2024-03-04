@@ -8,6 +8,8 @@
 
 ### [2. Расчет нагрузки](#2)
 
+### [3. Глобальная балансировка нагрузки](#3)
+
 ### [Список используемых источников](#sources)
 
 ## 1. Тема и целевая аудитория <a name="1"></a>
@@ -144,6 +146,48 @@
 
 В течении ближайших пяти лет согласно [^9], если брать в расчет рост предыдущих лет, рост количества скачиваемых приложений и игр в год может составить порядка `50 %`.
 
+#### 3. Глобальная балансировка нагрузки <a name="3"></a>
+
+Согласно [^11] распределение дата центров по всему миру примем следующей:
+
+![data centers locations](./images/data_centres_map.png)
+
+**North America**
+
+- Berkeley County, South Carolina
+- Council Bluffs, Iowa
+- The Dalles, Oregon
+- Douglas County, Georgia
+- Henderson, Nevada
+- Jackson County, Alabama
+- Lenoir, North Carolina
+- Loudoun County, Virginia
+- Mayes County, Oklahoma
+- Midlothian, Texas
+- Montgomery County, Tennessee
+- New Albany, Ohio
+- Papillion, Nebraska
+- Storey County, Nevada
+
+**South America**
+
+- Quilicura, Chile
+
+**Europe**
+
+- Dublin, Ireland
+- Eemshaven, Netherlands
+- Fredericia, Denmark
+- Hamina, Finland
+- Middenmeer, Netherlands
+- St. Ghislain, Belgium
+
+**Asia**
+
+- Changhua County, Taiwan
+- Inzai, Japan
+- Singapore
+
 ## Список используемых источников <a name="sources"></a>
 
 [^1]: [How Google Play works](https://play.google/howplayworks/)
@@ -156,3 +200,4 @@
 [^8]: [Average mobile game file size increased 76% over last five years](https://www.businessofapps.com/news/average-mobile-game-file-size-increased-76-over-last-five-years/#:~:text=According%20to%20research%20from%20SensorTower,compared%20to%20465MB%20in%202020.)
 [^9]: [Top Google Play Store Statistics 2023 – Exploring The Key Insights](https://bigohtech.com/google-play-store-statistics/)
 [^10]: [Mobile App Ratings and Reviews: 2022 Benchmarks](https://www.alchemer.com/resources/blog/mobile-app-ratings-and-reviews-2022-benchmarks/)
+[^11]: [Discover our data center locations](https://www.google.com/about/datacenters/locations/)
