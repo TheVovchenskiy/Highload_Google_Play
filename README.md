@@ -139,8 +139,8 @@
 | Скачивание игр, `Гбит/с`             | `6.42`    | `3.63`    | `1.05`        | `1.05`    | `0.84`    | `0.72`    | `0.59`      | `0.59`    | `0.54`    | `0.43`    |
 | Загрузка нового приложения, `Гбит/с` | `1.0E-04` | `5.7E-05` | `1.7E-05`     | `1.7E-05` | `1.3E-05` | `1.1E-05` | `9.4E-06`   | `9.3E-06` | `8.5E-06` | `6.8E-06` |
 | Загрузка новой игры, `Гбит/с`        | `1.5E-05` | `8.3E-06` | `2.4E-06`     | `2.4E-06` | `1.9E-06` | `1.7E-06` | `1.4E-06`   | `1.3E-06` | `1.2E-06` | `9.9E-07` |
-| Отзывы                               | `0.73`    | `0.41`    | `0.12`        | `0.12`    | `0.10`    | `0.08`    | `0.07`      | `0.07`    | `0.06`    | `0.05`    |
-| Суммарный суточный, `Пбит/с`         | `5.1`     | `2.9`     | `0.8`         | `0.8`     | `0.7`     | `0.6`     | `0.5`       | `0.5`     | `0.4`     | `0.3`     |
+| Отзывы, `Гбит/с`                     | `0.73`    | `0.41`    | `0.12`        | `0.12`    | `0.10`    | `0.08`    | `0.07`      | `0.07`    | `0.06`    | `0.05`    |
+| Суммарный суточный, `Пбит`           | `5.1`     | `2.9`     | `0.8`         | `0.8`     | `0.7`     | `0.6`     | `0.5`       | `0.5`     | `0.4`     | `0.3`     |
 
 #### Ожидаемый прирост
 
@@ -148,45 +148,49 @@
 
 ## 3. Глобальная балансировка нагрузки <a name="3"></a>
 
-Согласно [^11] распределение дата центров по всему миру примем следующей:
+### Расположение дата центров
 
-![data centers locations](./images/data_centres_map.png)
+За основу возьмем данные о распределение дата центров Google по всему миру [^11]:
 
-**North America**
+![data centers locations](./images/google_data_centres_map.png)
 
-- Berkeley County, South Carolina
-- Council Bluffs, Iowa
-- The Dalles, Oregon
-- Douglas County, Georgia
-- Henderson, Nevada
-- Jackson County, Alabama
-- Lenoir, North Carolina
-- Loudoun County, Virginia
-- Mayes County, Oklahoma
-- Midlothian, Texas
-- Montgomery County, Tennessee
-- New Albany, Ohio
-- Papillion, Nebraska
-- Storey County, Nevada
+Согласно данным в первом и втором разделах, страны с наибольшим количеством трафика:
 
-**South America**
+- China
+- India
+- United States
+- Brazil
+- Indonesia
+- Pakistan
+- Philippines
+- Russia
+- Mexico
+- Vietnam
 
-- Quilicura, Chile
+Согласно [^12] плотность населнения Земли предствлена на рисунке снизу.
 
-**Europe**
+![Population density](./images/population_density.png)
 
-- Dublin, Ireland
-- Eemshaven, Netherlands
-- Fredericia, Denmark
-- Hamina, Finland
-- Middenmeer, Netherlands
-- St. Ghislain, Belgium
+Выберем датацентры в местах с наибольшей плотностью населения:
 
-**Asia**
+- Лудун, Вирджиния, США
+- Стори-Каунти, Невада, США
+- Мидлотиан, Техас, США
+- Чжанхуа, Тайвань
+- Нью-Дели, Индия
+- Сингапур
+- Индзай, Япония
+- Киликура, Чили
+- Сен-Гилен, Бельгия
 
-- Changhua County, Taiwan
-- Inzai, Japan
-- Singapore
+Все расположения представлены на карте ниже.
+
+![Data centres locations](/images/data_centres_locations.png)
+
+### Алгоритм глобальной балансировки
+
+- Для глобальной балансировки между континентами будем использовать `Latency based DNS` балансировку, что позволит отправлять запросы от клиентов в те ДЦ, соответсвующие минимальной задержке.
+- Для обслуживания наиболее удаленных от дата центров клиентов  - будем использовать `BGP Anycast` до `CDN`
 
 ## Список используемых источников <a name="sources"></a>
 
@@ -201,3 +205,4 @@
 [^9]: [Top Google Play Store Statistics 2023 – Exploring The Key Insights](https://bigohtech.com/google-play-store-statistics/)
 [^10]: [Mobile App Ratings and Reviews: 2022 Benchmarks](https://www.alchemer.com/resources/blog/mobile-app-ratings-and-reviews-2022-benchmarks/)
 [^11]: [Discover our data center locations](https://www.google.com/about/datacenters/locations/)
+[^12]: [Плотность населения](https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BD%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F)
